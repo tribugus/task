@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SchoolRoutingModule  } from './school/school-routing.module';
-import { SchoolModule } from './school/school.module';
+import { TaskRoutingModule  } from './task/task-routing.module';
+import { SchoolModule } from './task/task.module';
 
 
 
@@ -13,7 +13,7 @@ import { SchoolModule } from './school/school.module';
   ],
   imports: [
     BrowserModule,
-    SchoolRoutingModule,
+    TaskRoutingModule,
     AppRoutingModule,
     SchoolModule
     //RouterModule.forRoot(APP_ROUTES)

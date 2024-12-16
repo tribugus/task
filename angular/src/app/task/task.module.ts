@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
 
-import { SchoolRoutingModule } from './school-routing.module';
+import { TaskRoutingModule } from './task-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/resources/header/header.component';
@@ -33,7 +33,7 @@ import { ModulosComponent } from './components/modulos/modulos.component';
   imports: [
     MatSliderModule,
     CommonModule,
-    SchoolRoutingModule,
+    TaskRoutingModule,
     MaterialModule,
     HttpClientModule,
     BrowserAnimationsModule,
