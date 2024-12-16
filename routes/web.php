@@ -19,5 +19,10 @@ Route::get('2',function(){
 });
 
 
+Route::get('test',function(){
+    return "test";
+});
+
+
 
 

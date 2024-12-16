@@ -1,4 +1,6 @@
 <?php
+
+
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Environments;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -8,6 +10,7 @@ return Application::configure(basePath: dirname(__DIR__))
         web: __DIR__.'/../routes/web.php',
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
+        api: __DIR__.'/../routes/api.php', // Add the API routes
     )
     ->withMiddleware(function (Middleware $middleware) {
         // Middleware de sesión
@@ -17,4 +20,5 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function ($exceptions) {
         //
-    })->create();
+    })
+    ->create();
