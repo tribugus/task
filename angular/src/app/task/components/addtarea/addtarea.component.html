@@ -38,9 +38,34 @@
     </p>
 
 
+    <p>
+      <mat-form-field color="warn" appearance="fill">
+        <mat-label>Prioridad:</mat-label>
+        <mat-select formControlName="prioridad">
+          <mat-option value="baja">Baja</mat-option>
+          <mat-option value="media">Media</mat-option>
+          <mat-option value="alta">Alta</mat-option>
+        </mat-select>
+        <mat-error *ngIf="tareaForm.get('prioridad')?.hasError('required')">La prioridad es obligatoria</mat-error>
+      </mat-form-field>
+    </p>
 
 
 
+        <!-- Estado -->
+        <p>
+          <mat-form-field color="warn" appearance="fill">
+            <mat-label>Estado:</mat-label>
+            <mat-select formControlName="estado">
+              <mat-option value="pendiente">Pendiente</mat-option>
+              <mat-option value="en_proceso">En Proceso</mat-option>
+              <mat-option value="completada">Completada</mat-option>
+            </mat-select>
+            <mat-error *ngIf="tareaForm.get('estado')?.hasError('required')">El estado es obligatorio</mat-error>
+          </mat-form-field>
+        </p>
+
+        
     </mat-card-content>
 
 
