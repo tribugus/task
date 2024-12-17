@@ -62,9 +62,7 @@ export class DashboardComponent implements OnInit {
 
   }
 
-  panelCokie(e:Number): void{
-    setCookie('config_secciones_sequence', e.toString());
-  }
+
   setCockie(e:Number): boolean{
     const a = getCookie('config_secciones_sequence') != undefined ? getCookie('config_secciones_sequence') : 0;
     if(e==a)
