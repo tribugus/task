@@ -6,6 +6,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import { Router} from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { FormControl, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -18,9 +19,13 @@ export class AddtareaComponent implements OnInit {
 
   loading$ = this.loader.loading$;
 
-  selectedPrioridad: string | undefined;
-  
-  
+ 
+  tareaForm = new FormGroup({
+    priori: new FormControl(''),
+    titulo: new FormControl(''),
+    desc: new FormControl(''),
+  });
+
   constructor(public dialog: MatDialog,private http: HttpClient,public loader: LoadingService, private router: Router,
     private toastr: ToastrService) { }
 
@@ -31,16 +36,14 @@ export class AddtareaComponent implements OnInit {
 
 
   submit(){
-
-
-    var title = document.getElementsByName("titulo") as NodeListOf<HTMLInputElement>;
-    var desc = document.getElementsByName("desc") as NodeListOf<HTMLInputElement>;
-    var fecha = document.getElementsByName("fecha") as NodeListOf<HTMLInputElement>;
-    var priori = document.getElementsByName("priori") as NodeListOf<HTMLSelectElement>;
-    //var priori = document.getElementsByName("priori")[0] as any;
-
+    
+    var priori = this.tareaForm.get('priori')?.value
+    var titulo = this.tareaForm.get('titulo')?.value
+    var desc = this.tareaForm.get('desc')?.value
 
     console.log(priori);
+    console.log(titulo);
+    console.log(desc);
 
 
 

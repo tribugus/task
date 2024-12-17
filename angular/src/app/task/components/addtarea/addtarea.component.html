@@ -1,6 +1,6 @@
  
 <div class="main-div">
-  <form>
+  <form [formGroup]="tareaForm">
   <mat-card class="example-card">
     
   
@@ -11,7 +11,7 @@
       <p>
         <mat-form-field color="warn" appearance="fill">
           <mat-label>Título:</mat-label>
-          <input matInput placeholder="Título de la tarea" name="titulo">
+          <input matInput placeholder="Título de la tarea" formControlName="titulo">
           <mat-hint>Ingrese el título de la tarea</mat-hint>
         </mat-form-field>
       </p>
@@ -19,7 +19,7 @@
       <p>
         <mat-form-field color="warn" appearance="fill">
           <mat-label>Descripción:</mat-label>
-          <textarea matInput placeholder="Descripción de la tarea"  name="desc"></textarea>
+          <textarea matInput placeholder="Descripción de la tarea"  formControlName="desc"></textarea>
           <mat-hint>Ingrese una breve descripción de la tarea</mat-hint>
         </mat-form-field>
       </p>
@@ -38,7 +38,7 @@
     <p>
       <mat-form-field color="warn" appearance="fill">
         <mat-label>Prioridad:</mat-label>
-        <mat-select name="priori" id="priori" >
+        <mat-select formControlName="priori">
           <mat-option value="baja">Baja</mat-option>
           <mat-option value="media">Media</mat-option>
           <mat-option value="alta">Alta</mat-option>
