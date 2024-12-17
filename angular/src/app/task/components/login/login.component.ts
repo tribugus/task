@@ -55,34 +55,21 @@ export class LoginComponent implements OnInit {
     this.LoginPromise().then((data2:any) => {
 
 
+
+    
+
       if(data2.status=="success"){
 
-
-        console.log(data2);
-
-
         sessionStorage.setItem('_nghost-upu-c16', Utils.encode(JSON.stringify(data2.data)));
-        var dataUser = Utils.jsonData("dataUser");
-        this.MenuPromise(dataUser.token).then((data:any) => {
-          sessionStorage.setItem('_nghost-gmo-c140', Utils.encode(JSON.stringify(data.data.menu)));
-          this.toastr.success(data2.message+', bienvenido '+data2.data.nombre.toLowerCase(),'', { timeOut: 3000, });
-          this.auth.isLoggedIn = true;
-          var cadena = "";
-          data.data.menu.forEach((val1 : any, key1: any) => {
-            val1.modulos.forEach((val2 : any, key2: any) => {
-              cadena = cadena + val2.s_url+",";
-            });
-          });
-          sessionStorage.setItem('_ngcontent-bor-c16', Utils.encode(JSON.stringify(cadena)));
-          this.loader.hide();
-          this.router.navigate(['/dashboard']);
-        }).catch((e) => {
-          console.log(e);
-        });
+        this.toastr.success(data2.message+', bienvenido '+data2.data.nikname.toLowerCase(),'', { timeOut: 3000, });
+        this.auth.isLoggedIn = true;
+        this.loader.hide();
+        this.router.navigate(['/dashboard']);
+
       }
       
 
-      if(data2.status=="warning"||data2.status=="fail"){
+      if(data2.status=="error"||data2.status=="fail"){
         this.toastr.error(data2.message,'', { timeOut: 3000, });
         this.user = "";
         this.password = "";
@@ -112,18 +99,8 @@ export class LoginComponent implements OnInit {
     ).toPromise();
   }
 
+
   
-  MenuPromise(token:String) {
-    const headers= new HttpHeaders()
-    .set('Licencia', Utils.Licencia)
-    .set('Token', token.toString() )
-    .set('content-type', 'application/json');
-    return this.http.get(Utils.api_ + 'menu',{ 'headers': headers }
-    ).toPromise();
-  }
-
-
-
   
 
 

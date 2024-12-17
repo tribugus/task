@@ -27,12 +27,14 @@ class LoginController extends Controller
             return response()->json([
                 'status' => 'success',
                 'message' => 'Login exitoso',
+                'data' => $user,
             ], 200);
         }
 
  
         return response()->json([
+            'status' => 'error',
             'message' => 'Credenciales incorrectas',
-        ], 401);
+        ], 200);
     }
 }
