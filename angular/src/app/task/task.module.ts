@@ -18,6 +18,19 @@ import { HeaderComponent } from './components/resources/header/header.component'
 import { FooterComponent } from './components/resources/footer/footer.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { TareasComponent } from './components/tareas/tareas.component';
+import { AddtareaComponent } from './components/addtarea/addtarea.component';
+
+
+
+
+import { ReactiveFormsModule } from '@angular/forms';  // Importante para formularios reactivos
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +40,7 @@ import { TareasComponent } from './components/tareas/tareas.component';
     FooterComponent,
     InicioComponent,
     TareasComponent,
+    AddtareaComponent,
   ],
   imports: [
     MatSliderModule,
@@ -40,6 +54,15 @@ import { TareasComponent } from './components/tareas/tareas.component';
       preventDuplicates: true,
     }),
     
+    ReactiveFormsModule,  // Agregar el ReactiveFormsModule
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
+
+
   ]
 })
-export class SchoolModule { }
+export class TaskModule { }
