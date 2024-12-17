@@ -18,7 +18,7 @@ import { HeaderComponent } from './components/resources/header/header.component'
 import { FooterComponent } from './components/resources/footer/footer.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { SeccionesComponent } from './components/secciones/secciones.component';
-import { ModulosComponent } from './components/modulos/modulos.component';
+import { TareasComponent } from './components/tareas/tareas.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { ModulosComponent } from './components/modulos/modulos.component';
     FooterComponent,
     InicioComponent,
     SeccionesComponent,
-    ModulosComponent,
+    TareasComponent,
   ],
   imports: [
     MatSliderModule,
