@@ -17,7 +17,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/resources/header/header.component';
 import { FooterComponent } from './components/resources/footer/footer.component';
 import { InicioComponent } from './components/inicio/inicio.component';
-import { SeccionesComponent } from './components/secciones/secciones.component';
 import { TareasComponent } from './components/tareas/tareas.component';
 
 @NgModule({
@@ -27,7 +26,6 @@ import { TareasComponent } from './components/tareas/tareas.component';
     HeaderComponent,
     FooterComponent,
     InicioComponent,
-    SeccionesComponent,
     TareasComponent,
   ],
   imports: [
