@@ -1,7 +1,8 @@
 export default class Utils {
-    static api_n29 = "http://servimsa.net/sandbox/api/";
-    static api_intra = "https://servimsa.net/intranet/api/";
-    static api_sequ = "http://localhost/sequence/api/";
+
+
+    static api2_ = "local";
+    static api_ = "http://localhost:6060/task/public/api/";
     static Licencia = "ZuOxShfHw3923i5q2el6JLXYP5W01r8Rbw9eG1yspE8U7rA8DMtJMStzD7k9LGHA4j7a4CVNyBg31oFcm6I46nFQK2dKovT5PqiQ";
    
    

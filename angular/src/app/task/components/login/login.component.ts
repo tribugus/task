@@ -54,7 +54,12 @@ export class LoginComponent implements OnInit {
     
     this.LoginPromise().then((data2:any) => {
 
+
       if(data2.status=="success"){
+
+
+        console.log(data2);
+
 
         sessionStorage.setItem('_nghost-upu-c16', Utils.encode(JSON.stringify(data2.data)));
         var dataUser = Utils.jsonData("dataUser");
@@ -100,10 +105,10 @@ export class LoginComponent implements OnInit {
     .set('content-type', 'application/json');
 
     const data = {
-      user: this.user,
+      nikname: this.user,
       password: this.password
     };
-    return this.http.post(Utils.api_sequ + 'login',data,{ 'headers': headers }
+    return this.http.post(Utils.api_ + 'login',data,{ 'headers': headers }
     ).toPromise();
   }
 
@@ -113,7 +118,7 @@ export class LoginComponent implements OnInit {
     .set('Licencia', Utils.Licencia)
     .set('Token', token.toString() )
     .set('content-type', 'application/json');
-    return this.http.get(Utils.api_sequ + 'menu',{ 'headers': headers }
+    return this.http.get(Utils.api_ + 'menu',{ 'headers': headers }
     ).toPromise();
   }
 

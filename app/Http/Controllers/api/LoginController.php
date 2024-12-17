@@ -25,7 +25,7 @@ class LoginController extends Controller
  
 
             return response()->json([
-                'status' => 'succes',
+                'status' => 'success',
                 'message' => 'Login exitoso',
             ], 200);
         }

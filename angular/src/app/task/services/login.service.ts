@@ -15,7 +15,7 @@ export class LoginService {
 
   getEmployees(): Observable<Login> {
     return this.http
-      .get<Login>(Utils.api_n29 + 'ws.n29e.get.masterdata')
+      .get<Login>(Utils.api2_ + 'ws.n29e.get.masterdata')
       .pipe(retry(1));
   }
 
