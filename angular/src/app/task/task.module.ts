@@ -10,6 +10,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Asegúrate de importar FormsModule
+
 
 import { TaskRoutingModule } from './task-routing.module';
 import { LoginComponent } from './components/login/login.component';
@@ -50,6 +52,9 @@ import { MatNativeDateModule } from '@angular/material/core';
       positionClass: 'toast-top-center',
       preventDuplicates: true,
     }),
+
+    FormsModule,
+    ReactiveFormsModule,
     
     MatDatepickerModule,
     MatFormFieldModule,

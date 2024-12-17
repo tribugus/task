@@ -114,6 +114,7 @@ export class LoginComponent implements OnInit {
       this.password = event.target.value.trim();
   }
 
+  
   addToKeywords(): void{
     this.loginUser();
   }
