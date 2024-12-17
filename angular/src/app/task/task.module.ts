@@ -21,15 +21,10 @@ import { TareasComponent } from './components/tareas/tareas.component';
 import { AddtareaComponent } from './components/addtarea/addtarea.component';
 
 
-
-
-import { ReactiveFormsModule } from '@angular/forms';  // Importante para formularios reactivos
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -43,6 +38,8 @@ import { MatSelectModule } from '@angular/material/select';
     AddtareaComponent,
   ],
   imports: [
+
+
     MatSliderModule,
     CommonModule,
     TaskRoutingModule,
@@ -54,14 +51,10 @@ import { MatSelectModule } from '@angular/material/select';
       preventDuplicates: true,
     }),
     
-    ReactiveFormsModule,  // Agregar el ReactiveFormsModule
-    MatInputModule,
-    MatFormFieldModule,
-    MatButtonModule,
     MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatNativeDateModule,
-    MatSelectModule,
-
 
   ]
 })

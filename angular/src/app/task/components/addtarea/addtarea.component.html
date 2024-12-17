@@ -1,61 +1,59 @@
-<div class="mat-typography">
-    <h2>Registro de Tarea</h2>
-    <form [formGroup]="tareaForm" (ngSubmit)="onSubmit()">
-      <mat-form-field appearance="fill">
-        <mat-label>Usuario ID</mat-label>
-        <input matInput formControlName="usuario_id" placeholder="ID del usuario">
-        <mat-error *ngIf="tareaForm.get('usuario_id')?.hasError('required')">El usuario es obligatorio</mat-error>
-      </mat-form-field>
+ 
+<div class="main-div">
+
+  <mat-card class="example-card">
+    
   
-      <mat-form-field appearance="fill">
-        <mat-label>Título</mat-label>
-        <input matInput formControlName="titulo" placeholder="Título de la tarea">
-        <mat-error *ngIf="tareaForm.get('titulo')?.hasError('required')">El título es obligatorio</mat-error>
-        <mat-error *ngIf="tareaForm.get('titulo')?.hasError('maxlength')">El título no puede tener más de 100 caracteres</mat-error>
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill">
-        <mat-label>Descripción</mat-label>
-        <textarea matInput formControlName="descripcion" placeholder="Descripción de la tarea"></textarea>
-        <mat-error *ngIf="tareaForm.get('descripcion')?.hasError('required')">La descripción es obligatoria</mat-error>
-        <mat-error *ngIf="tareaForm.get('descripcion')?.hasError('maxlength')">La descripción no puede tener más de 500 caracteres</mat-error>
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill">
-        <mat-label>Fecha de Inicio</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="fecha_inicio" placeholder="Fecha de inicio">
-        <mat-datepicker #picker></mat-datepicker>
-        <mat-error *ngIf="tareaForm.get('fecha_inicio')?.hasError('required')">La fecha de inicio es obligatoria</mat-error>
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill">
-        <mat-label>Fecha de Vencimiento</mat-label>
+    <mat-card-content>
+
+      <p>
+        <mat-form-field color="warn" appearance="fill">
+          <mat-label>Título:</mat-label>
+          <input matInput formControlName="titulo" placeholder="Título de la tarea">
+          <mat-hint>Ingrese el título de la tarea</mat-hint>
+          <mat-error *ngIf="tareaForm.get('titulo')?.hasError('required')">El título es obligatorio</mat-error>
+          <mat-error *ngIf="tareaForm.get('titulo')?.hasError('maxlength')">El título no puede tener más de 100 caracteres</mat-error>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field color="warn" appearance="fill">
+          <mat-label>Descripción:</mat-label>
+          <textarea matInput formControlName="descripcion" placeholder="Descripción de la tarea"></textarea>
+          <mat-hint>Ingrese una breve descripción de la tarea</mat-hint>
+          <mat-error *ngIf="tareaForm.get('descripcion')?.hasError('required')">La descripción es obligatoria</mat-error>
+          <mat-error *ngIf="tareaForm.get('descripcion')?.hasError('maxlength')">La descripción no puede tener más de 500 caracteres</mat-error>
+        </mat-form-field>
+      </p>
+
+
+
+    <p>
+      <mat-form-field color="warn" appearance="fill">
+        <mat-label>Fecha de Vencimiento:</mat-label>
         <input matInput [matDatepicker]="picker2" formControlName="fecha_vencimiento" placeholder="Fecha de vencimiento">
         <mat-datepicker #picker2></mat-datepicker>
         <mat-error *ngIf="tareaForm.get('fecha_vencimiento')?.hasError('required')">La fecha de vencimiento es obligatoria</mat-error>
       </mat-form-field>
+    </p>
+
+
+
+
+
+    </mat-card-content>
+
+
+
+    <mat-card-actions>
+      <br><br><br>
+      <button mat-raised-button  color="warn">crear </button>
+    </mat-card-actions>
+    
+  </mat-card>
   
-      <mat-form-field appearance="fill">
-        <mat-label>Prioridad</mat-label>
-        <mat-select formControlName="prioridad">
-          <mat-option value="baja">Baja</mat-option>
-          <mat-option value="media">Media</mat-option>
-          <mat-option value="alta">Alta</mat-option>
-        </mat-select>
-        <mat-error *ngIf="tareaForm.get('prioridad')?.hasError('required')">La prioridad es obligatoria</mat-error>
-      </mat-form-field>
   
-      <mat-form-field appearance="fill">
-        <mat-label>Estado</mat-label>
-        <mat-select formControlName="estado">
-          <mat-option value="pendiente">Pendiente</mat-option>
-          <mat-option value="en_proceso">En Proceso</mat-option>
-          <mat-option value="completada">Completada</mat-option>
-        </mat-select>
-        
-        <mat-error *ngIf="tareaForm.get('estado')?.hasError('required')">El estado es obligatorio</mat-error>
-      </mat-form-field>
+ 
+</div>
   
-      <button mat-raised-button color="primary" type="submit" [disabled]="tareaForm.invalid">Registrar Tarea</button>
-    </form>
-  </div>
+
