@@ -20,4 +20,42 @@ class TareasController extends Controller
         
         
     }
+
+    public function store(Request $request)
+    {
+
+
+
+
+        try {
+            // Crear una nueva tarea con los datos recibidos
+            $tarea = new Tarea();
+            $tarea->usuario_id = 0;
+            $tarea->titulo = $request->titulo;
+            $tarea->descripcion = $request->desc;
+            $tarea->fecha_inicio = $request->fecha;
+            $tarea->fecha_vencimiento = $request->fecha;
+            $tarea->prioridad = $request->priori;
+            $tarea->estado = $request->estado;
+            $tarea->save();
+
+   
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Tarea creada exitosamente',
+                'data' => $tarea,
+            ], 200);  // Código 201 para recurso creado
+        } catch (Exception $e) {
+            // Capturar cualquier excepción y retornar el mensaje de error
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Error al crear tarea: ' . $e->getMessage(),
+            ], 200);  // Código 500 para error interno del servidor
+        }
+
+
+        
+        
+    }
+
 }

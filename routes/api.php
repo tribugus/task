@@ -15,4 +15,5 @@ Route::get('/tareas/{id}',[TareasController::class, 'index']);
 
 Route::post('login', [LoginController::class, 'login']);
 
+Route::post('store', [TareasController::class, 'store']);
 

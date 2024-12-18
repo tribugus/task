@@ -29,7 +29,7 @@
     <p>
       <mat-form-field color="warn" appearance="fill">
         <mat-label>Fecha de Vencimiento:</mat-label>
-        <input matInput [matDatepicker]="picker2"  placeholder="Fecha de vencimiento" name="fecha">
+        <input matInput [matDatepicker]="picker2"  placeholder="Fecha de vencimiento" formControlName="fecha">
         <mat-datepicker #picker2></mat-datepicker>
       </mat-form-field>
     </p>
@@ -51,7 +51,7 @@
       <p>
         <mat-form-field color="warn" appearance="fill">
           <mat-label>Estado:</mat-label>
-          <mat-select>
+          <mat-select formControlName="estado">
             <mat-option value="pendiente">Pendiente</mat-option>
             <mat-option value="en_proceso">En Proceso</mat-option>
             <mat-option value="completada">Completada</mat-option>

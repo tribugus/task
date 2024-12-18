@@ -19,7 +19,7 @@ const body = document.getElementsByClassName("example-container");
 })
 export class DashboardComponent implements OnInit {
 
-
+  loading$ = this.loader.loading$;
   dataMenu = Utils.jsonData("dataMenu");
 
   panelOpenState = false;

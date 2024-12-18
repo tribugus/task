@@ -50,29 +50,6 @@
         </div>
 
       
-
-
-        <!-- <span>
-          <button mat-button routerLink="/">XXX</button>
-          <button mat-button routerLink="/"><mat-icon>home</mat-icon></button>
-        </span>
-        <div fxLayout="row" fxShow="false" fxShow.gt-sm>
-          <button mat-button routerLink="/login" >
-            <mat-icon>power_settings_new</mat-icon>
-            Login
-          </button>
-          <button mat-button >
-            <mat-icon>exit_to_app</mat-icon>
-            Logout
-          </button>
-          <button mat-button routerLink="/game">
-            <mat-icon>gamepad</mat-icon>
-            Play
-          </button>
-        </div>
-        <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
-          <mat-icon>menu</mat-icon>
-        </button> -->
     </mat-toolbar>
     
     <mat-menu x-position="before" #menu="matMenu">
@@ -107,3 +84,7 @@
 
 
 <app-footer></app-footer>
+
+<div class="overlay"  *ngIf="loading$ | async">
+  <mat-progress-spinner [mode]="'indeterminate'" [color]="'Warn'" [strokeWidth]="3" ></mat-progress-spinner>
+</div>
