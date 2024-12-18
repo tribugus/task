@@ -30,7 +30,7 @@ class TareasController extends Controller
         try {
             // Crear una nueva tarea con los datos recibidos
             $tarea = new Tarea();
-            $tarea->usuario_id = 0;
+            $tarea->usuario_id = $request->user_id;
             $tarea->titulo = $request->titulo;
             $tarea->descripcion = $request->desc;
             $tarea->fecha_inicio = $request->fecha;
@@ -57,5 +57,42 @@ class TareasController extends Controller
         
         
     }
+
+
+
+    public function destroy($id)
+    {
+        try {
+            // Buscar la tarea por el ID
+            $tarea = Tarea::findOrFail($id);
+
+            // Eliminar la tarea
+            $tarea->delete();
+
+            // Retornar respuesta exitosa
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Tarea eliminada exitosamente.'
+            ], 200);
+
+        } catch (\Exception $e) {
+            // Manejar el error si no se encuentra la tarea o si ocurre otro problema
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Hubo un problema al eliminar la tarea: ' . $e->getMessage()
+            ], 200);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 }

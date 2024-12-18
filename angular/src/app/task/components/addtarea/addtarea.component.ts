@@ -28,6 +28,7 @@ export class AddtareaComponent implements OnInit {
     desc: new FormControl(''),
     fecha: new FormControl(''),
     estado: new FormControl(''),
+    user_id: new FormControl(''),
   });
 
   constructor(public dialog: MatDialog,private http: HttpClient,public loader: LoadingService, private router: Router,
@@ -47,8 +48,6 @@ export class AddtareaComponent implements OnInit {
 
 
     this.StorePromise().then((data:any) => {
-
-      console.log(data);
 
       if(data.status=="success"){
 
@@ -78,19 +77,30 @@ export class AddtareaComponent implements OnInit {
 
 
   
-StorePromise() {
-  // Extraer los valores del formulario
-  const formData = this.tareaForm.value;
+  StorePromise() {
+  
+  
+    const userData = Utils.jsonData('dataUser');
+  
+  
+    let formData = this.tareaForm.value;
+    var user_id = userData.id.toString();
+    formData.user_id = user_id;
+  
+  
+    // Configurar los encabezados
+    const headers = new HttpHeaders()
+      .set('Licencia', Utils.Licencia)
+      .set('Content-Type', 'application/json');
+  
+    // Hacer la solicitud HTTP POST
+    return this.http.post(Utils.api_ + 'store', formData, { headers }).toPromise();
+  }
+  
 
-  // Configurar los encabezados
-  const headers = new HttpHeaders()
-    .set('Licencia', Utils.Licencia)
-    .set('Content-Type', 'application/json');
 
-  // Hacer la solicitud HTTP POST
-  return this.http.post(Utils.api_ + 'store', formData, { headers }).toPromise();
-}
 
+  
 
 }
 
