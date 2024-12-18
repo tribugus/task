@@ -6,6 +6,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { TareasComponent } from './components/tareas/tareas.component';
 import { AddtareaComponent } from './components/addtarea/addtarea.component';
+import { EditComponent } from './components/edit/edit.component';
 
 import { AuthGuard } from './auth/auth.guard';
 import { AuthGuard2 } from './auth/auth.guard2';
@@ -22,6 +23,7 @@ const routes: Routes = [
       { path: '', component: InicioComponent },
       { path: 'tareas', component: TareasComponent },
       { path: 'add', component: AddtareaComponent },
+      { path: 'edit', component: EditComponent },
 
     ]
 

@@ -5,18 +5,24 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class TaskService {
-  // Creamos un BehaviorSubject para almacenar el objeto `task`
+ 
   private selectedTask = new BehaviorSubject<any>(null);
 
   constructor() {}
 
-  // Método para establecer el objeto `task` en el servicio
-  setTask(task: any): void {
-    this.selectedTask.next(task);  // Establecemos el valor del objeto task
+
+  updateTask(task: any): void {
+    const currentTask = this.selectedTask.value;
+
+    if (currentTask && currentTask.id === task.id) {
+      this.selectedTask.next({ ...currentTask, ...task });
+    } else {
+
+      this.selectedTask.next(task);
+    }
   }
 
-  // Método para obtener el objeto `task` desde cualquier componente
   getTask() {
-    return this.selectedTask.asObservable();  // Nos suscribimos para obtener el objeto
+    return this.selectedTask.asObservable();
   }
 }

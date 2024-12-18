@@ -1,0 +1,16 @@
+/* Hacer que el contenedor principal ocupe todo el ancho disponible */
+.main-div {
+    display: flex;
+    justify-content: center;  /* Centra el formulario horizontalmente */
+    align-items: top;      /* Centra el formulario verticalmente (si hay suficiente altura) */       /* Asegura que el formulario ocupe toda la altura de la pantalla */
+  }
+  
+  .example-card {
+    width: 80%;              /* El formulario ocupará el 80% del ancho de la pantalla */
+    width: 600px;        /* Limita el ancho máximo del formulario */
+  }
+  
+  /* Hacer los mat-form-field más anchos */
+  mat-form-field {
+    width: 100%; /* Hace que los campos de formulario se expandan al 100% de su contenedor */
+  }

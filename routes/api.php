@@ -18,3 +18,5 @@ Route::post('login', [LoginController::class, 'login']);
 Route::post('store', [TareasController::class, 'store']);
 
 Route::delete('tareas/{id}', [TareasController::class, 'destroy']);
+
+Route::put('/tareas/{id}', [TareasController::class, 'update']);

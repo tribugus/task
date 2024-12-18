@@ -63,20 +63,19 @@ class TareasController extends Controller
     public function destroy($id)
     {
         try {
-            // Buscar la tarea por el ID
+           
             $tarea = Tarea::findOrFail($id);
 
-            // Eliminar la tarea
             $tarea->delete();
 
-            // Retornar respuesta exitosa
+  
             return response()->json([
                 'status' => 'success',
                 'message' => 'Tarea eliminada exitosamente.'
             ], 200);
 
         } catch (\Exception $e) {
-            // Manejar el error si no se encuentra la tarea o si ocurre otro problema
+
             return response()->json([
                 'status' => 'error',
                 'message' => 'Hubo un problema al eliminar la tarea: ' . $e->getMessage()
@@ -86,11 +85,45 @@ class TareasController extends Controller
 
 
 
+    
+    
+    public function update(Request $request, $id)
+    {
 
-
-
-
-
+   
+        
+        try {
+            $tarea = Tarea::find($id);
+    
+            if (!$tarea) {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Tarea no encontrada '.$id
+                ], 200);
+            }
+    
+            $tarea->usuario_id = $request->user_id;
+            $tarea->titulo = $request->titulo;
+            $tarea->descripcion = $request->desc;
+            $tarea->fecha_inicio = $request->fecha;
+            $tarea->fecha_vencimiento = $request->fecha;
+            $tarea->prioridad = $request->priori;
+            $tarea->estado = $request->estado;
+    
+            $tarea->save();
+    
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Tarea actualizada exitosamente.'
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Hubo un problema al actualizar la tarea: ' . $e->getMessage()
+            ], 200);
+        }
+    }
+    
 
 
 

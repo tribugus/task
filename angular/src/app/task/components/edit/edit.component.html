@@ -1,0 +1,79 @@
+ 
+<div class="main-div">
+  <form [formGroup]="tareaForm">
+  <mat-card class="example-card">
+    
+  
+    <mat-card-content>
+
+
+
+      <p>
+        <mat-form-field color="warn" appearance="fill">
+          <mat-label>Título:</mat-label>
+          <input matInput placeholder="Título de la tarea" formControlName="titulo">
+          <mat-hint>Ingrese el título de la tarea</mat-hint>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field color="warn" appearance="fill">
+          <mat-label>Descripción:</mat-label>
+          <textarea matInput placeholder="Descripción de la tarea"  formControlName="desc"></textarea>
+          <mat-hint>Ingrese una breve descripción de la tarea</mat-hint>
+        </mat-form-field>
+      </p>
+
+
+
+    <p>
+      <mat-form-field color="warn" appearance="fill">
+        <mat-label>Fecha de Vencimiento:</mat-label>
+        <input matInput [matDatepicker]="picker2"  placeholder="Fecha de vencimiento" formControlName="fecha">
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    </p>
+
+
+    <p>
+      <mat-form-field color="warn" appearance="fill">
+        <mat-label>Prioridad:</mat-label>
+        <mat-select formControlName="priori">
+          <mat-option value="baja">Baja</mat-option>
+          <mat-option value="media">Media</mat-option>
+          <mat-option value="alta">Alta</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p>
+
+
+
+      <p>
+        <mat-form-field color="warn" appearance="fill">
+          <mat-label>Estado:</mat-label>
+          <mat-select formControlName="estado">
+            <mat-option value="pendiente">Pendiente</mat-option>
+            <mat-option value="en_proceso">En Proceso</mat-option>
+            <mat-option value="completada">Completada</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </p>
+
+   
+    </mat-card-content>
+
+
+
+    <mat-card-actions>
+      <br><br><br>
+      <button mat-raised-button  color="warn" (click)="submit()" type="submit">actualizar </button>
+
+      <button mat-raised-button  color="primary" type="submit" routerLink="/dashboard/tareas">cancelar </button>
+    </mat-card-actions>
+    
+  </mat-card>
+  
+</form>
+</div>
+  
+

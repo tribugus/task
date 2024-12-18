@@ -21,6 +21,7 @@ import { FooterComponent } from './components/resources/footer/footer.component'
 import { InicioComponent } from './components/inicio/inicio.component';
 import { TareasComponent } from './components/tareas/tareas.component';
 import { AddtareaComponent } from './components/addtarea/addtarea.component';
+import { EditComponent } from './components/edit/edit.component';
 
 
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -38,6 +39,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     InicioComponent,
     TareasComponent,
     AddtareaComponent,
+    EditComponent,
   ],
   imports: [
 

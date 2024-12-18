@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import Utils from '../../../helpers/utils';
 import { ToastrService } from 'ngx-toastr';
 import { TaskService } from '../../services/task.service'; 
-
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-tareas',
@@ -17,7 +17,7 @@ export class TareasComponent implements OnInit {
   dataSource = [];
 
 
-  constructor(private taskService: TaskService,private http: HttpClient,private toastr: ToastrService) { }
+  constructor(private taskService: TaskService,private http: HttpClient,private toastr: ToastrService,private router: Router) { }
 
   ngOnInit(): void {
 
@@ -70,14 +70,10 @@ export class TareasComponent implements OnInit {
 
 
 
-  
   editTask(task: any): void {
 
-    console.log('Tarea a editar:', task);
-    // Establecemos el objeto `task` en el servicio
-    this.taskService.setTask(task);
-    // Redirigimos a la página de edición (por ejemplo, '/edit-task')
-    //this.router.navigate(['/tarea/'+task.id.toString()]);
+    this.taskService.updateTask(task);
+    this.router.navigate(['/dashboard/edit']);
 
   
   }
