@@ -22,6 +22,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { TareasComponent } from './components/tareas/tareas.component';
 import { AddtareaComponent } from './components/addtarea/addtarea.component';
 import { EditComponent } from './components/edit/edit.component';
+import { ShowComponent } from './components/show/show.component';
 
 
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -40,6 +41,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     TareasComponent,
     AddtareaComponent,
     EditComponent,
+    ShowComponent,
+    
   ],
   imports: [
 
