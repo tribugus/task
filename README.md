@@ -44,3 +44,16 @@ en el proyecto buscar src/app/helpers/Utils.ts, y cambiar la api por la que se r
     static api_ = "http://localhost/task/public/api/";
 
 correr el front con : ng serve
+
+----------------------------------------------------------
+
+prueba el sistema con los siguientes usuarios:
+
+usuario : usuario1
+password : 123
+
+usuario : usuario2
+password : 123
+
+usuario : usuario3
+password : 123
