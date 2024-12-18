@@ -78,8 +78,13 @@ export class TareasComponent implements OnInit {
   
   }
 
+  showTask(task: any): void {
 
+    this.taskService.updateTask(task);
+    this.router.navigate(['/dashboard/show']);
 
+  
+  }
 
 
 }

@@ -1,1 +1,48 @@
-<p>show works!</p>
+ 
+<div class="main-div">
+ 
+    <mat-card class="example-card">
+      
+    
+      <mat-card-content>
+  
+  
+        <mat-label>Título:</mat-label>
+        <h1>{{ task.titulo }}</h1>
+  
+   
+        <mat-label>Descripcion:</mat-label>
+        <h1>{{ task.descripcion }}</h1>
+  
+
+     
+      <mat-label>Fecha vencimiento:</mat-label>
+      <h1>{{ task.fecha_vencimiento }}</h1>
+
+  
+ 
+      <mat-label>Prioridad:</mat-label>
+      <h1>{{ task.prioridad }}</h1>
+
+
+  
+ 
+      <mat-label>Estado:</mat-label>
+      <h1>{{ task.estado }}</h1>
+
+
+      </mat-card-content>
+  
+  
+  
+      <mat-card-actions>
+        <br><br><br>
+        <button mat-raised-button  color="primary" type="submit" routerLink="/dashboard/tareas">regresar </button>
+      </mat-card-actions>
+      
+    </mat-card>
+
+  </div>
+    
+  
+  

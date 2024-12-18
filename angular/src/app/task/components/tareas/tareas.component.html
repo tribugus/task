@@ -28,7 +28,7 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef>Acciones</th>
       <td mat-cell *matCellDef="let element">
-        <button mat-icon-button color="primary" >
+        <button mat-icon-button color="primary" (click)="showTask(element)">
           <mat-icon>visibility</mat-icon>
         </button>
         <button mat-icon-button color="accent" (click)="editTask(element)">

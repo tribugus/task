@@ -5,6 +5,8 @@ import { ToastrService } from 'ngx-toastr';
 import { TaskService } from '../../services/task.service'; 
 import { Router} from '@angular/router';
 
+import { FormControl, FormGroup } from '@angular/forms';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-show',
@@ -17,10 +19,35 @@ export class ShowComponent  implements OnInit {
 
   constructor(private taskService: TaskService,private http: HttpClient,private toastr: ToastrService,private router: Router) { }
 
+
+  task: any;
+  taskSubscription: any;
+
+  
+
+
   ngOnInit(): void {
 
+    this.taskService.getTask().pipe(take(1)).subscribe((task) => {
+      if (task) {
+        this.task = task;
+      } else {
+        this.router.navigate(['/dashboard/tareas']);
+      }
+    });
 
   }
+
+
+  ngOnDestroy(): void {
+    if (this.taskSubscription) {
+      this.taskSubscription.unsubscribe();
+    }
+  }
+
+
+
+
 
 
 }
